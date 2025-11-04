@@ -67,9 +67,22 @@ mysqld --initialize --user=mysql
 2.缺少依赖包，比如：libaio包、glibc库版本低  
 3.反复初始化后，数据目录非空，需清空  
 
+
+设置MySQL开机自启动
+```
+cp /opt/mysql-8.4.6/support-files/mysql.server /etc/init.d/
+mv /etc/init.d/mysql.server /etc/init.d/mysql
+vi /etc/init.d/mysql
+将如下变量地址修改成安装地址
+basedir=/opt/mysql-8.4.6
+datadir=/opt/data
+
+chkconfig --add mysql
+chkconfig --list
+```
+
 登录MySQL，修改root@localhost权限密码  
 ```
 mysql -uroot -p
 alter user 'root'@'localhost' identified by 'mysql';
 ```
-
