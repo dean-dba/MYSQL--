@@ -62,4 +62,4 @@ source /etc/profile
 mysqld --initialize --user=mysql
 ```
 
-### 若报错，可根据报错提示修复
+##### 若报错，可根据报错提示修复
