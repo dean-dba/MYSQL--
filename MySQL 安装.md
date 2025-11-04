@@ -62,9 +62,14 @@ source /etc/profile
 mysqld --initialize --user=mysql
 ```
 
-##### 特别提示：若报错，可根据报错提示修复，常见报错有如下：
+##### 特别提示：若报错，可根据报错提示修复，常见报错如下：
 1.目录权限不足，需授权  
 2.缺少依赖包，比如：libaio包、glibc库版本低  
 3.反复初始化后，数据目录非空，需清空  
 
+登录MySQL，修改root@localhost权限密码  
+```
+mysql -uroot -p
+alter user 'root'@'localhost' identified by 'mysql';
+```
 
