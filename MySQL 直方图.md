@@ -43,3 +43,8 @@ show variables like '%histogram_generation_max_mem_size%';
 - **analyze table的结果是随机采样估算值，受持久化采样参数：innodb_stats_persistent_sample_pages，默认值：20页**
 - **analyze table t自动更新与update histogram on自动更新触发时机：当表中10%行发生变化时，会触发自动更新**
 - **analyze table t自动更新受参数：innodb_stats_persistent_sample_pages影响，触发自动更新**
+
+##### 特殊说明
+- **在MGR集群下，在主节点创建直方图后，从节点并没有同步过来，从节点binlog日志已写入，我理解应该是可以同步过来，应该是BUG，需要官方优化**
+
+#### 最后说明，当发现执行计划不是最优时，可以使用直方图优化
