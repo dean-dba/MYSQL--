@@ -40,6 +40,6 @@ show variables like '%histogram_generation_max_mem_size%';
 
 #### analyze table t 跟 update histogram on 的区别是什么  
 - **analyze table针对的是表和索引，而update histogram on针对的是列，维度不同**
-- **analyze table的结果是索引基数估算值，受持久化采样参数：innodb_stats_persistent_sample_pages，默认值：20页**
+- **analyze table的结果是随机采样估算值，受持久化采样参数：innodb_stats_persistent_sample_pages，默认值：20页**
 - **analyze table t自动更新与update histogram on自动更新触发时机：当表中10%行发生变化时，会触发自动更新**
 - **analyze table t自动更新受参数：innodb_stats_persistent_sample_pages影响，触发自动更新**
