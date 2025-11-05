@@ -5,7 +5,7 @@
 #### 直方图的基本概念
 - **桶（Bucket）数量：0-1024个之间，默认值：100个**  
 - **直方图有两种类型：singleton直方图（等宽直方图）、equi-height直方图（等高直方图）；触发规则：在桶不变的情况下，根据列中值的数量自动选择使用那种直方图类型**  
-- **8.4版本开始支持直方图自动更新**  
+- **8.4 版本开始支持直方图自动更新**  
 - **直方图是针对列的一种统计方式**
 -  **支持分区表，但不支持视图（view）**
 -  **不支持spatial data、json列类型**
@@ -14,8 +14,8 @@
 
 
 创建直方图  
-##### 在不指定桶（Bucket）数量的情况下，默认会创建100个桶  
-##### 在不指定更新方式的情况下需要手动更新 
+- **在不指定桶（Bucket）数量的情况下，默认会创建100个桶**  
+- **在不指定更新方式的情况下需要手动更新** 
 ``` 
 analyze table t update histogram on c1;
 ```
@@ -31,12 +31,12 @@ analyze table t drop histogram on c1;
 ```
 
 直方图相关系统参数，默认值：20000000B（约等于20M） 
-##### 参数影响直方图的sampling-rate
+- **参数影响直方图的sampling-rate**
 ```
 show variables like '%histogram_generation_max_mem_size%';
 ```
 
-### analyze table t 跟 update histogram on 的区别是什么  
+#### analyze table t 跟 update histogram on 的区别是什么  
 - **analyze table针对的是表和索引，而update histogram on针对的是列，维度不同**
 - **analyze table的结果是索引基数估算值，受持久化采样参数：innodb_stats_persistent_sample_pages，默认值：20页**
 - **analyze table t自动更新与update histogram on自动更新触发时机：当表中10%行发生变化时，会触发自动更新**
