@@ -24,6 +24,12 @@ SELECT @@optimizer_switch\G;
 select /*+ JOIN_ORDER(t1, t2) t1.col_name,t2.col_name from t1,t2 where t1.id=t2.id; 
 ```
 
+查看优化器执行方式
+```
+explian select format=json t1.col_name,t2.col_name from t1,t2 where t1.id=t2.id;  
+show warnings; 
+```
+
 **优化器成本模型：** 基于成本模型（CBO：Cost-based Optimizer）  
 **优化器成本模型数据来源：** mysql.server_cost、mysql.engine_cost
 
