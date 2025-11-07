@@ -3,3 +3,7 @@
 ## 概述
 
 众所周知，MYSQL是当下最流行的开源关系型数据库系统之一，常年霸榜DB-Engines第二。本作者结合多年奋斗在互联网一线的实战经验，结合在实际工作中遇到的各种问题，整理成文档，希望为开源社区，还有新入职场的DB小白贡献自己的一点点力量。
+
+## 目录
+
+- **<a href="https://github.com/dean-dba/MYSQL--/blob/main/MySQL%20%E5%AE%89%E8%A3%85.md" target="_blank">MySQL 安装</a>**
