@@ -7,8 +7,6 @@
 - **生产环境中谨慎使用优化器提示，使用前提：在更新了统计信息，也使用了直方图的情况下，SQL仍然不理想时可用**
 - ****
 
-&nbsp;
-
 查看优化器类型
 ```
 SELECT @@optimizer_switch\G;
@@ -25,8 +23,6 @@ SELECT @@optimizer_switch\G;
 ```
 select /*+ JOIN_ORDER(t1, t2) t1.col_name,t2.col_name from t1,t2 where t1.id=t2.id; 
 ```
-
-&nbsp;
 
 **优化器提示使用范围：** select、insert、update、delete、replace、explain  
 
