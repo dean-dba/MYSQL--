@@ -21,8 +21,18 @@ SELECT @@optimizer_switch\G;
 /*+ opti_hint */
 ```
 
-**优化器提示使用范围**：select、insert、update、delete、replace、explain
+优化器使用案例  
+```
+select /*+ JOIN_ORDER(t1, t2) t1.col_name,t2.col_name from t1,t2 where t1.id=t2.id; 
+```
+
+**优化器提示使用范围：** select、insert、update、delete、replace、explain  
+
+**优化器提示分类：** 连接顺序、表级、索引级、子查询、SQL执行时间、资源组、设置变量、语句块命名  
+
+**优化器提示应用范围：** 全局、查询块、表级、索引级  
 
 #### 重要声明
-- **关于优化器可参考官网链接：https://dev.mysql.com/doc/refman/8.4/en/switchable-optimizations.html**
-- **关于优化器提示可以参考官网链接：https://dev.mysql.com/doc/refman/8.4/en/optimizer-hints.html**
+- **关于优化器可参考官网链接：** https://dev.mysql.com/doc/refman/8.4/en/switchable-optimizations.html
+- **关于优化器提示可以参考官网链接：** https://dev.mysql.com/doc/refman/8.4/en/optimizer-hints.html
+- **关于优化器成本模型可以参考官网链接**：https://dev.mysql.com/doc/refman/8.4/en/cost-model.html
