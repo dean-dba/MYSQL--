@@ -7,16 +7,16 @@
 - **inplace：** 原地重建表，只在DDL操作开始和结束阶段独占元数据锁，期间允许DML、DQL
 - **copy：** 将原表数据copy至新表，开始和结束期间，不允许DML，可以DQL
 
-  #### Online DDL锁(lock)类型：
-  - **none：** 允许DML、DQL
-  - **shared：** 只允许DQL
-  - **exclusive：** 不允许DML、DQL
+#### Online DDL锁(lock)类型：
+- **none：** 允许DML、DQL
+- **shared：** 只允许DQL
+- **exclusive：** 不允许DML、DQL
 
-    Online DDL语法
-    #### 当使用"ALGORITHM=default,LOCK=default"时，MySQL会根据Online DDL操作类型，存储引擎类型、MySQL版本自动匹配对应的ALGORITHM、LOCK，原则是最小化ALGORITHM、LOCK
-    ```
+Online DDL语法
+#### 当使用"ALGORITHM=default,LOCK=default"时，MySQL会根据Online DDL操作类型，存储引擎类型、MySQL版本自动匹配对应的ALGORITHM、LOCK，原则是最小化ALGORITHM、LOCK
+```
 ALTER TABLE tbl_name ADD INDEX name (col_list),ALGORITHM=default,LOCK=default;
-    ```
+```
 
 #### Online DDL声明：
 - **MySQL 8.0.29版本之后，添加列时可以使用instant添加列至任意位置，即支持first、after语法**
