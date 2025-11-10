@@ -27,4 +27,6 @@ ALTER TABLE tbl_name ADD INDEX name (col_list),ALGORITHM=default,LOCK=default;
 
  #### MySQL 8.0版本开始并行创建索引功能，受参数：innodb_ddl_buffer_size(默认：1MB)、innodb_parallel_read_threads(最小4)、innodb_ddl_threads(默认：4) 控制
 
+ #### 参数链接：https://dev.mysql.com/doc/refman/8.4/en/innodb-online-ddl.html
+
  
