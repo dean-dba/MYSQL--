@@ -104,9 +104,9 @@ alter table test drop index idx_a;
 - **多值索引DDL算法：copy**
 - **order by和group by 列索引必须来自同一索引，否则无法使用索引**
 - **多列索引遵循最左前缀原则，但在特殊场景下，也可以使用"skip_scan"特性**
-- **json多值索引的DDL算法：copy**
+- **JSON多值索引的DDL算法：copy**
 - **一个复合索引只能包含一个多值索引列**
-- **json类型的cast函数的默认排序规则为utf8mb4_0900_ai_ci，JSON_UNQUOTE()函数的默认排序规则为utf8mb4_bin**
+- **JSON类型的cast函数的默认排序规则为utf8mb4_0900_ai_ci，JSON_UNQUOTE()函数的默认排序规则为utf8mb4_bin**
 
 #### 至此，关于MySQL 索引就基本介绍完了，有需要的小伙伴们，赶紧跟着示例使用起来吧！
 
