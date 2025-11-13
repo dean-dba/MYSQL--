@@ -20,4 +20,70 @@
 2. 对临时磁盘文件中的数据进行合并排序
 3. 将合并后的排序数据，插入到二级索引中
 
+#### 索引的创建示例
+
+创建主键索引  
+```
+alter table test add primary key (a);  
+```
+
+创建唯一索引  
+```
+alter table test add unique index idx_a(a);   
+```
+
+创建二级索引  
+```
+alter table test add index idx_a(a); 
+```
+
+创建多列索引  
+```
+alter table test add index idx_a_b(a,b);
+```
+
+创建多列正序、降序混合索引  
+```
+alter table test add index idx_a_b(a asc,b desc);
+```
+
+创建函数索引  
+```
+alter table test add index idx_a((upper(a)));
+```
+
+创建前缀索引  
+```
+alter table test add index idx_a(a(100)); 
+```
+
+创建全文索引  
+```
+alter table test add fulltext index idx_a(a); 
+```
+
+创建json单列、单值索引  
+```
+alter table test add index idx_a_a1((cast(a->>'$.a1' as char(50)) collate utf8mb4_bin)); 
+```
+
+创建json单列、多值索引  
+```
+alter table test add index idx_a_a1( (cast(a->'$.a1' as unsigned array)) );  
+```
+
+创建json多列多值索引
+```
+alter table test add index idx_b_a_a1(modified,(cast(custinfo->'$.zipcode' as unsigned array)) ); 
+```
+
+创建不可见索引
+```
+alter table test alter index idx_a invisible;
+```
+
+重命名索引
+```
+alter table test rename index  idx_a to idx_a_bak;
+```
 
