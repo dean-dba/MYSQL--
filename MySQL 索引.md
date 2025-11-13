@@ -87,3 +87,24 @@ alter table test alter index idx_a invisible;
 alter table test rename index  idx_a to idx_a_bak;
 ```
 
+删除索引
+```
+alter table test drop index idx_a;
+```
+
+#### 索引注意事项
+- **索引创建后，会自动收集统计信息，受参数"innodb_stats_persistent(默认：on)"控制**
+- **索引值的最大大小为3072B，受参数："innodb_default_row_format(默认：dynamic)"控制**
+- **索引页合并的阈值是低于50%，受参数："merge_threshold(默认：50%)"控制**
+- **索引页保留1/16空间，以供将来增长使用，受参数："innodb_fill_factor(默认：100%)"控制**
+- **强制开启表必须有主键索引，受参数："sql_require_primary_key(默认：off)"控制**
+- **varchar(10)和char(10)可以使用索引，varchar(10)和char(15)无法使用索引**
+- **列数据类型不同无法使用索引**
+- **列字符集不同无法使用索引**
+- **多值索引DDL算法：copy**
+- **order by和group by 列索引必须来自同一索引，否则无法使用索引**
+- **多列索引遵循最左前缀原则，但在特殊场景下，也可以使用"skip_scan"特性**
+
+#### 至此，关于MySQL 索引就基于介绍完了，有需要的小伙伴们，赶紧跟着示例使用起来吧！
+
+#### 参考链接：https://dev.mysql.com/doc/refman/8.4/en/create-index.html
