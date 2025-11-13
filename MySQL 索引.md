@@ -105,6 +105,6 @@ alter table test drop index idx_a;
 - **order by和group by 列索引必须来自同一索引，否则无法使用索引**
 - **多列索引遵循最左前缀原则，但在特殊场景下，也可以使用"skip_scan"特性**
 
-#### 至此，关于MySQL 索引就基于介绍完了，有需要的小伙伴们，赶紧跟着示例使用起来吧！
+#### 至此，关于MySQL 索引就基本介绍完了，有需要的小伙伴们，赶紧跟着示例使用起来吧！
 
 #### 参考链接：https://dev.mysql.com/doc/refman/8.4/en/create-index.html
