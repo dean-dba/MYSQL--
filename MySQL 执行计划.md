@@ -2,7 +2,6 @@
 
 #### 通过MySQL 执行计划，可以很直观的看到SQL的性能，并进行调试和修改，它是了解SQL好坏的最直接工具，也是最常用的方式之一
 
-
 #### MySQL 执行计划类型
 
 traditional：表格格式，默认格式  
@@ -25,7 +24,7 @@ analyze：采用树形格式，它是执行计划+真实执行，结果会显示
 explain analyze select col1,col2 from t1 where t1.col1=100;
 ```
 
-explain返回内容  
+explain返回内容，重点关注：type、key、rows、Extra，SQL执行顺序：当ID列值不同时，值越大越先执行；当ID列值相同时，由上而下顺序执行  
 ```
 +----+-------------+-------+------------+------+---------------+---------------+---------+-------+------+----------+-------+
 | id | select_type | table | partitions | type | possible_keys | key           | key_len | ref   | rows | filtered | Extra |
