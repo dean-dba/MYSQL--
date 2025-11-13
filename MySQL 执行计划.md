@@ -38,7 +38,7 @@ explain返回内容，重点关注：type、key、rows、Extra，SQL执行顺序
 - **通过show status like 'last_query_cost';，可以查看SQL的执行成本**
 
 
-##### 假设一个二级索引页可以存放多少数据的计算规则如下
+#### 假设一个二级索引页可以存放多少数据的计算规则如下
 ```
 innodb_page_size：16K，即16384B
 二级索引的一行大小：二级索引列+主键列大小，假设：二级索引列varchar(50)+主键列(bigint)=200+8（因为在utf8mb4字符集下一个字符占4B）
@@ -48,4 +48,4 @@ innodb_page_size：16K，即16384B
 假设通过二级索引查找1000行数据，在完全没有缓存的情况下，则磁盘查找次数=1000/79=13次IO（实际IO受磁盘类型、MySQL预读参数等影响）
 ```
 
-##### 这里不过多讲执行计划输出中各个字段具体都是什么含义，也不展开讲各个字段都有哪些类型，有需要的小伙伴们，可以参考链接：https://dev.mysql.com/doc/refman/8.4/en/execution-plan-information.html
+#### 这里不过多讲执行计划输出中各个字段具体都是什么含义，也不展开讲各个字段都有哪些类型，有需要的小伙伴们，可以参考链接：https://dev.mysql.com/doc/refman/8.4/en/execution-plan-information.html
