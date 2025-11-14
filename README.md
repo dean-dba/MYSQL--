@@ -14,3 +14,4 @@
 - **<a href="https://github.com/dean-dba/MySQL-Wiki/blob/main/MySQL%20%E7%94%A8%E6%88%B7%E4%B8%8ESSL.md" target="_blank">MySQL 用户与SSL</a>**
 - **<a href="https://github.com/dean-dba/MySQL-Wiki/blob/main/MySQL%20%E7%B4%A2%E5%BC%95.md" target="_blank">MySQL 索引</a>**
 - **<a href="https://github.com/dean-dba/MySQL-Wiki/blob/main/MySQL%20%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92.md" target="_blank">MySQL 执行计划</a>**
+- **<a href="https://github.com/dean-dba/MySQL-Wiki/blob/main/MySQL%20%E5%85%8B%E9%9A%86%E6%8F%92%E4%BB%B6.md" target="_blank">MySQL 克隆插件</a>**
